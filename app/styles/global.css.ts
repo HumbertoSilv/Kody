@@ -11,7 +11,10 @@ globalStyle('*', {
 globalStyle('body', {
   WebkitFontSmoothing: 'antialiased',
   backgroundColor: vars.color.primary,
-  color: vars.color.text
+  color: vars.color.text,
+  width: '70%',
+  height: '100vh',
+  margin: 'auto'
 })
 
 globalStyle('body, input, textarea, button', {

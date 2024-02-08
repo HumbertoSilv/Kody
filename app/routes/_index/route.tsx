@@ -1,8 +1,8 @@
-import { container, introBox, text, titleOne, titleTwo } from "./styles.css";
+import { introBox, text, titleOne, titleTwo } from "./styles.css";
 
 export default function Index() {
   return (
-    <div className={container}>
+    <div>
       <div className={introBox}>
         <h2 className={titleOne}>
           Start with

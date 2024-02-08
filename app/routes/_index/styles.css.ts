@@ -1,15 +1,10 @@
 import { style } from "@vanilla-extract/css";
 import { vars } from "../../styles/theme.css";
 
-export const container = style({
-  width: '100%',
-  height: '100vh',
-})
-
 export const introBox = style({
   width: '50%',
   lineHeight: '0.8',
-  padding: '20% 0 0 15%'
+  padding: '20% 0 0 8%'
 })
 
 export const titleOne = style({
