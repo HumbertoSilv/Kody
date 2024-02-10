@@ -5,24 +5,33 @@ import {
 
 export const vars = createThemeContract({
   color: {
-    primary: null,
-    secondary: null,
-    title: null,
-    text: null,
+    textPrimary: null,
+    textSecondary: null,
+
+    backgroundPrimary: null,
+    backgroundSecondary: null,
+
+
+    white: null,
   },
   font: {
-    body: null
+    primary: null
   }
 });
 
 createGlobalTheme(':root', vars, {
   color: {
-    primary: "#020817fa",
-    secondary: "#e4f9ff",
-    title: "#f8fafc",
-    text: "#94a3b8",
+    textPrimary: '#f8fafc',
+    textSecondary: '#94a3b8',
+
+    backgroundPrimary: '#020817',
+    backgroundSecondary: '#1e293b',
+
+
+    white: '#ffffff',
+
   },
   font: {
-    body: 'Roboto, sans-serif',
+    primary: 'Roboto, sans-serif',
   }
 });

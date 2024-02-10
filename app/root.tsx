@@ -10,6 +10,7 @@ import {
   Scripts,
   ScrollRestoration,
 } from "@remix-run/react";
+import AppBar from './components/AppBar';
 
 export const links: LinksFunction = () => [
   ...(cssBundleHref ? [{ rel: "stylesheet", href: cssBundleHref }] : []),
@@ -28,6 +29,7 @@ export default function App() {
         <Links />
       </head>
       <body>
+        <AppBar />
         <Outlet />
         <ScrollRestoration />
         <Scripts />
