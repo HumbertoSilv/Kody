@@ -9,12 +9,12 @@ export const introBox = style({
 
 export const titleOne = style({
   fontSize: '7rem',
-  color: vars.color.title
+  color: vars.color.textPrimary
 })
 
 export const titleTwo = style({
   fontSize: '13rem',
-  color: vars.color.title
+  color: vars.color.textPrimary
 
 })
 

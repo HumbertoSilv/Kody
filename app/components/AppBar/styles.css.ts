@@ -16,11 +16,11 @@ export const formSearch = style({
 })
 
 export const inputStyle = style({
-  background: vars.color.primary,
+  background: vars.color.backgroundPrimary,
   padding: '0.5rem 0.75rem',
   fontSize: '0.875rem',
   borderRadius: 6,
-  border: `solid 1px ${vars.color.input}`,
+  border: `solid 1px ${vars.color.backgroundSecondary}`,
   flex: 1
 })
 
