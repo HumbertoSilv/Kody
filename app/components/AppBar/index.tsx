@@ -1,5 +1,6 @@
 import { MagnifyingGlass } from "@phosphor-icons/react"
-import { buttonLogin, buttonSearch, container, formSearch, inputStyle } from "./styles.css"
+import Link from "../Link"
+import { buttonSearch, container, formSearch, inputStyle } from "./styles.css"
 
 export default function AppBar() {
   return (
@@ -19,9 +20,9 @@ export default function AppBar() {
           </button>
         </form>
 
-        <button className={buttonLogin}>
+        <Link to='login'>
           Log in
-        </button>
+        </Link>
       </nav>
     </header>
   )

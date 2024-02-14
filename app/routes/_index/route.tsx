@@ -1,4 +1,6 @@
-import { introBox, text, titleOne, titleTwo } from "./styles.css";
+import { Link } from "@remix-run/react";
+
+import { introBox, linkStyle, text, titleOne, titleTwo } from "./styles.css";
 
 export default function Index() {
   return (
@@ -11,8 +13,11 @@ export default function Index() {
           Kody
         </h1>
         <span className={text}>
-          let&apos;s go!
+          Be part of our community.
         </span>
+        <Link to='login' className={linkStyle}>
+          let&apos;s go!
+        </Link>
       </div>
     </div>
   );
