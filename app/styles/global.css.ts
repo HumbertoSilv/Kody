@@ -21,3 +21,7 @@ globalStyle('body, input, textarea, button', {
   fontFamily: vars.font.primary,
   fontWeight: 400
 })
+
+globalStyle('button', {
+  cursor: 'pointer'
+})
