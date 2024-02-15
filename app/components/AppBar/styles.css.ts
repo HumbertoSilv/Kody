@@ -24,20 +24,11 @@ export const inputStyle = style({
   flex: 1
 })
 
-export const button = style({
+export const buttonSearch = style({
+  padding: '0.5rem 1rem',
   fontSize: '0.875rem',
   fontWeight: '500',
   border: 'none',
   borderRadius: '6px',
   background: vars.color.white,
 })
-
-
-export const buttonLogin = style([button, {
-  padding: '0 2rem',
-}])
-
-export const buttonSearch = style([button, {
-  padding: '0.5rem 1rem',
-  height: '2.5rem'
-}])

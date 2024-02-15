@@ -99,7 +99,6 @@ export const button = style({
   border: 'none',
   borderRadius: '6px',
   background: vars.color.white,
-  cursor: 'pointer',
   padding: '0.5rem 1rem',
   lineHeight: '1.25rem'
 })
