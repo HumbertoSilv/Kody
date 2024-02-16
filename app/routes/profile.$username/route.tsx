@@ -1,5 +1,7 @@
 import { SignOut, User } from "@phosphor-icons/react";
-import { MetaFunction } from "@remix-run/node";
+import { ActionFunctionArgs, LoaderFunction, LoaderFunctionArgs, MetaFunction, json, redirect } from "@remix-run/node";
+import { useLoaderData } from "@remix-run/react";
+import { destroySession, getSession } from "../../utils/session.server";
 import { buttonContainerStyles, buttonStyles, containerStyles, dateStyles, logoutButtonStyles, profileImageStyles, profileInfoContainerStyles, usernameStyles } from "./styles.css";
 
 export const meta: MetaFunction = () => {
@@ -9,7 +11,31 @@ export const meta: MetaFunction = () => {
   ];
 };
 
+export const loader: LoaderFunction = async ({ request }: LoaderFunctionArgs) => {
+  const session = await getSession(
+    request.headers.get("Cookie")
+  )
+
+  return json({
+    data: session.data
+  })
+}
+
+export const action = async ({ request }: ActionFunctionArgs) => {
+  const session = await getSession(
+    request.headers.get("Cookie")
+  );
+
+  return redirect("/login", {
+    headers: {
+      "Set-Cookie": await destroySession(session),
+    },
+  });
+};
+
 export default function Profile() {
+  const { data } = useLoaderData<typeof loader>()
+
   return (
     <div className={containerStyles}>
       <div className={profileImageStyles}>
@@ -19,15 +45,17 @@ export default function Profile() {
 
       <div className={profileInfoContainerStyles}>
         <h2 className={usernameStyles}>
-          Kody
+          {data.user.username}
         </h2>
         <h1 className={dateStyles}>
-          Joined 31/01/2024
+          Joined {new Date().toLocaleDateString()}
         </h1>
-        <button className={logoutButtonStyles}>
-          <SignOut size={20} />
-          Logout
-        </button>
+        <form method="POST">
+          <button className={logoutButtonStyles}>
+            <SignOut size={20} />
+            Logout
+          </button>
+        </form>
       </div>
 
       <div className={buttonContainerStyles}>
