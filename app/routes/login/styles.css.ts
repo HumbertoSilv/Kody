@@ -48,18 +48,32 @@ export const labelStyle = styleVariants({
   }
 })
 
-export const inputStyle = style({
-  width: '100%',
-  padding: '0.5rem 0.75rem',
-  marginBottom: '2rem',
-  fontSize: '0.875rem',
-  lineHeight: '1.5rem',
-  textTransform: 'lowercase',
-  borderRadius: 6,
-  border: `solid 1px ${vars.color.backgroundSecondary}`,
+export const inputStyle = styleVariants({
+  default: {
+    width: '100%',
+    padding: '0.5rem 0.75rem',
+    marginBottom: '2rem',
+    fontSize: '0.875rem',
+    lineHeight: '1.5rem',
+    textTransform: 'lowercase',
+    borderRadius: 6,
+    border: `solid 1px ${vars.color.backgroundSecondary}`,
 
-  color: vars.color.textPrimary,
-  background: vars.color.backgroundPrimary,
+    color: vars.color.textPrimary,
+    background: vars.color.backgroundPrimary,
+  },
+  error: {
+    width: '100%',
+    padding: '0.5rem 0.75rem',
+    fontSize: '0.875rem',
+    lineHeight: '1.5rem',
+    textTransform: 'lowercase',
+    borderRadius: 6,
+    border: `solid 1px #d15b5b`,
+
+    color: vars.color.textPrimary,
+    background: vars.color.backgroundPrimary,
+  }
 })
 
 export const helperBoxStyle = style({
@@ -107,4 +121,10 @@ export const createAccountStyles = style({
   display: 'flex',
   gap: '0.5rem',
   padding: '1.5rem'
+})
+
+export const errorsStyles = style({
+  fontSize: '0.875rem',
+  padding: '0.5rem 0',
+  color: '#d15b5b'
 })
